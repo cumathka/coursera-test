@@ -1,11 +1,20 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>hello world</title>
-</head>
-<body>
-    <h1>hello coursera-cuma-test1</h1>
-</body>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <script src="angular.min.js"></script>
+    <script src="app.js"></script>
+    <style>body { font-size: 1.3em; background-color: rgb(71, 217, 240); text-align: center;text-decoration-color: white; }</style>
+    <title>Name Calculator</title>
+  </head>
+  <body ng-app="calculateName">
+    <h1>Name Calculator</h1>
+    <div>
+      <div ng-controller="CalculateNameController">
+      inputa girilin metin : {{name}} <br><br>
+      <input type="text" name="name" ng-model="name" ng-keyup="displayNameCode()"> <br><br>
+      metin keyword degeri : {{nameValue}}
+      </div>
+    </div>
+  </body>
 </html>
