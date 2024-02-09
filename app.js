@@ -1,32 +1,26 @@
-  (function(){
-    "use strict";
+(function(){
+"use strict";
 
-    angular.module("calculateName",[])
-    .controller("CalculateNameController",function($scope){
-        $scope.name = "";
-        $scope.nameValue = 0;
+angular.module("UpApp",[])
+.controller("AppController",AppController)
 
-        $scope.displayNameCode = function(){
-            let totalNameValue = calculateNameCode($scope.name)
-            $scope.nameValue = totalNameValue;
+function AppController ($scope, $filter,$injector){
+    $scope.name= "kaya-cuma"
+
+    $scope.upper= function(){
+        let makeUpper = $filter("uppercase")
+        $scope.name = makeUpper($scope.name);
+
+        console.log($injector.annotate(AppController));
+        $scope.upper = function(){
+            let makeUpper = $filter("uppercase")
+            $scope.name = makeUpper($scope.name)
         }
-
-        function calculateNameCode(string) {
-            let codeValue =0 ;
-            for (let index = 0; index < string.length; index++) {
-                codeValue += string.charCodeAt(index);
-                
-            }
-            return codeValue;
-            
-        }
-
-
-    })
+    }
+}
 
 
 
 
 
-
-  })()
+})()

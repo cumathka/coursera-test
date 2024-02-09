@@ -4,16 +4,16 @@
     <meta charset="utf-8">
     <script src="angular.min.js"></script>
     <script src="app.js"></script>
-    <style>body { font-size: 1.3em; background-color: rgb(71, 217, 240); text-align: center;text-decoration-color: white; }</style>
-    <title>Name Calculator</title>
+    <style>body { font-size: 1.3em; background-color: rgb(165, 239, 141); text-align: center;text-decoration-color: white; }</style>
+    <title>Dependency Injection</title>
   </head>
-  <body ng-app="calculateName">
-    <h1>Name Calculator</h1>
-    <div>
-      <div ng-controller="CalculateNameController">
-      inputa girilin metin : {{name}} <br><br>
-      <input type="text" name="name" ng-model="name" ng-keyup="displayNameCode()"> <br><br>
-      metin keyword degeri : {{nameValue}}
+  <body>
+    <h1>Dependency Injection</h1>
+    <div ng-app="UpApp">
+      <div ng-controller="AppController">
+        <input type="text"  ng-model="name" ng-blur="upper()"/>
+        <br><br>
+        {{name}}
       </div>
     </div>
   </body>
