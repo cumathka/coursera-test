@@ -1,22 +1,21 @@
 (function(){
 "use strict";
 
-angular.module("UpApp",[])
-.controller("AppController",AppController)
+angular.module("appMsg",[])
+.controller("MsgController",MsgController)
 
-function AppController ($scope, $filter,$injector){
-    $scope.name= "kaya-cuma"
-
-    $scope.upper= function(){
-        let makeUpper = $filter("uppercase")
-        $scope.name = makeUpper($scope.name);
-
-        console.log($injector.annotate(AppController));
-        $scope.upper = function(){
-            let makeUpper = $filter("uppercase")
-            $scope.name = makeUpper($scope.name)
-        }
+MsgController.$inject= ["$scope"]
+function MsgController ($scope){
+    $scope.name= "kaya"
+    $scope.state ="eins"
+    $scope.sayMessage = function (){
+        return " cats likes to eat together" ;
     }
+
+  $scope.changeCat = function(){
+    $scope.state = $scope.state === 'eins' ? 'zwei'  : $scope.state === 'zwei' ? 'eins':"eins";
+  }
+
 }
 
 
