@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <script src="angular.min.js"></script>
+    <script src="app.js"></script>
+    <style>body { font-size: 1.3em; background-color: rgb(175, 188, 248); text-align: center;text-decoration-color: white; }</style>
+    <title>Filter Factory</title>
+  </head>
+  <body ng-app="appFilter">
+    <h1>Filter Factory!!!</h1>
+    <div>
+      <div ng-controller="FilterController">
+       
+        <div>
+        {{name | uppercase}} have a new message
+        </div>
+        <div>
+         Old message : {{message()}} <br>
+         Filtered message : {{messageFiltered()}} 
+        </div>
+        <div>
+          <button ng-click="FeedCats()">Feeds Cats</button> <br><br>
+          <img  ng-src="./images/Katzen_{{status}}.jpg" alt="cat eating" height="300" width="500"/>
+        </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
