@@ -11,22 +11,19 @@
     <h1>Filter Factory!!!</h1>
     <div>
       <div ng-controller="FilterController">
-       
-        <div>
-        {{name | uppercase}} have a new message
-        </div>
-        <div>
-         Old message : {{message()}} <br>
-         Filtered message : {{messageFiltered()}}  <br>
-         Filtered message with ardg und pipe : {{messageFiltered() | change : "together" : "alone"}}  <br>
-         UPPER MESSAGE : {{messageFiltered() | change : "together" : "alone" |uppercase}}  <br>
-
-
-        </div>
-        <div>
-          <button ng-click="FeedCats()">Feeds Cats</button> <br><br>
-          <img  ng-src="./images/Katzen_{{status}}.jpg" alt="cat eating" height="300" width="500"/>
-        </div>
+       <div>
+        {{name | uppercase}} : hat a new Message !
+       </div>
+       <div>
+        <button ng-click="changeImg()">change image</button> <br> <br>
+        <img ng-src="./images/Katzen_{{state}}.jpg" alt="cat" height="300" width="500">
+       </div>
+       <div>
+        Old Message : {{oldMessage()}} <br>
+        New Message : {{newMessage()}} <br>
+        filterFactory in html : {{newMessage() | new : "together" : "ALONE"}} <br>
+        Big Message : {{newMessage() | new : "together" : " alone" | uppercase}}
+       </div>
         </div>
       </div>
     </div>
