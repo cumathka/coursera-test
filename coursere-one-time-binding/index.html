@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <script src="angular.min.js"></script>
+    <script src="app.js"></script>
+    <style>body { font-size: 1.3em; background-color: rgb(132, 245, 149); text-align: center;text-decoration-color: white; }</style>
+    <title>one-way-binding</title>
+  </head>
+  <body ng-app="appBinding">
+    <h1>One Way Binding</h1>
+    <div>
+      <div ng-controller="bindingController">
+        <div>
+          <input type="text" ng-model="firstName">
+        </div>
+        <button ng-click="showNumbersOfWatchers()">ShowNumbersOfWatchers</button> <br>
+        <button ng-click="setFullName()">Set full Name</button> <br>
+        <button ng-click="logFirstName()">Log First Name</button> <br>
+        <button ng-click="logFullName()">Log Full Name</button> <br> <br>
+
+       <!-- ---- one way binding ---- -->
+         Das is Full  Name: {{ :: fullName}} <br><br>  
+
+      </div>
+      </div>
+    </div>
+  </body>
+</html>

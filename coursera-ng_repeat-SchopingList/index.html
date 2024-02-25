@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html ng-app="shoppingApp">
+  <head>
+    <meta charset="utf-8">
+    <script src="angular.min.js"></script>
+    <script src="app.js"></script>
+    <style>body { font-size: 1.3em; background-color: rgb(242, 245, 21); text-align: center;text-decoration-color: white; }</style>
+    <title>ng-repeat</title>
+  </head>
+  <body ng-app="appBinding">
+    <h1>Ng Repeat - Shopping List</h1>
+    <div>
+      <div ng-controller="shoppingController">
+      <ol>
+        <li  ng-repeat="item in shoppingList1">{{item}}</li>
+      </ol>
+      <div>
+        <input type="text" ng-model="newItem" ng-keypress="newItem($event)"/> <br>
+        <button ng-click="newItemList()">new item add</button>
+      </div>
+      </div>
+      </div>
+    </div>
+  </body>
+</html>
