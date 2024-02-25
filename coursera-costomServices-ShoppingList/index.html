@@ -12,17 +12,15 @@
     <div>
       <div ng-controller="ShoppingListAddController as itemAdder">
         <input type="text" placeholder="item name" ng-model="itemAdder.itemName">
-        <input type="text" placeholder="quantity" ng-model="itemAdder.itemQuantity">
-        <button class="addButton" ng-click="itemAdder.addItem()"> Add Item To Shopping List</button>
+        <input type="text" placeholder="item quantity"  ng-model="itemAdder.itemQuantity">
+        <button class="addButton" ng-click="itemAdder.addItem()">Add Item</button>
       </div>
-
-      <div ng-controller="ShoppingListShowController as  showList">
-        <ol>
-          <li ng-repeat="item in showList.items">
-            {{item.quantity}} of {{item.name}}
-            <button ng-click="showList.removeItem($index)">Remove Item</button>
+      <div ng-controller="ShoppingListShowController as ShowList">
+        <ul>
+          <li ng-repeat="item in ShowList.items">{{item.name}} of {{item.quantity}}
+            <button class="removeButton" ng-click="ShowList.removeItem($index)">Remove Item</button>
           </li>
-        </ol>
+        </ul>
       </div>
       </div>
     </div>
